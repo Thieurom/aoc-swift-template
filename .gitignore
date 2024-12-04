@@ -1,4 +1,4 @@
-Sources/Resources/Input
+Sources/Resources/Input/*.txt
 .DS_Store
 /.build
 /Packages
