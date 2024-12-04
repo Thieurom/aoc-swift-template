@@ -6,9 +6,15 @@ import PackageDescription
 let package = Package(
     name: "AdventOfCode",
     platforms: [.macOS(.v15)],
+    dependencies: [
+        .package(url: "https://github.com/apple/swift-argument-parser", from: "1.5.0")
+    ],
     targets: [
         .executableTarget(
-            name: "AdventOfCode",
+            name: "aoc",
+            dependencies: [
+                .product(name: "ArgumentParser", package: "swift-argument-parser")
+            ],
             resources: [.process("Resources")]
         ),
         .testTarget(name: "AdventOfCodeTests")

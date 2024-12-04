@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol DailySolvable {
+protocol DailySolvable: Sendable {
 
     static var day: Int { get }
     static var input: String { get }
@@ -37,7 +37,11 @@ extension DailySolvable {
         loadInputFromFile(day: day)
     }
 
+    var day: Int {
+        Self.day
+    }
+
     var name: String {
-        "Day \(Self.day)"
+        "Day \(day)"
     }
 }
