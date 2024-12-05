@@ -10,8 +10,8 @@ import Foundation
 protocol DailySolvable: Sendable {
 
     static var day: Int { get }
-    static var input: String { get }
 
+    init(input: String)
     func answerPart1() -> Int
     func answerPart2() -> Int
 }
@@ -33,8 +33,8 @@ extension DailySolvable {
         return data
     }
 
-    static var input: String {
-        loadInputFromFile(day: day)
+    init() {
+        self.init(input: Self.loadInputFromFile(day: Self.day))
     }
 
     var day: Int {

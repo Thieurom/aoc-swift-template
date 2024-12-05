@@ -17,6 +17,9 @@ let package = Package(
             ],
             resources: [.process("Resources")]
         ),
-        .testTarget(name: "AdventOfCodeTests")
+        .testTarget(
+            name: "AdventOfCodeTests",
+            dependencies: ["aoc"]
+        )
     ]
 )
